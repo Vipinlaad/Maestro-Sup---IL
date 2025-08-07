@@ -1,0 +1,64 @@
+appId: com.coffye.dqiabm
+name: Open Supertails
+---
+- launchApp:
+    clearState: true
+    stopApp: true
+
+- assertVisible:
+    text: "Login to continue"
+
+- tapOn: "Login Later"
+
+- takeScreenshot:
+    path: LoginScreen
+
+- assertVisible:
+    text: "Who are you shopping for today?"
+
+- tapOn:
+    above: "Who are you shopping for today?"
+
+- takeScreenshot:
+    path: Homepage
+
+- assertVisible:
+    text: "Dogs"
+
+- tapOn: "Dogs"
+- takeScreenshot:
+          path: Dog_Page
+- tapOn: "Cats"
+- takeScreenshot:
+        path: Cat_Page
+- tapOn: "Small Pets"
+- takeScreenshot:
+        path: Small_Pets
+- tapOn: "All"
+- takeScreenshot:
+     path: All_Page
+- repeat:
+    times: 7
+    commands:
+      - swipe:
+          direction: UP
+          duration: 2000
+      - takeScreenshot:
+          path: All_Page
+- tapOn: "Categories"
+- takeScreenshot:
+          path: Categories_page
+- repeat:
+    times: 7
+    commands:
+      - swipe:
+          direction: UP
+          duration: 2000
+      - takeScreenshot:
+          path: Categories_page
+- tapOn: "Categories"
+- takeScreenshot:
+         path: Categories
+- tapOn: "Brands"
+- takeScreenshot:
+      path: Brands_page
